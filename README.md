@@ -40,7 +40,7 @@ The second option has been selected, because:
 > Terraform version ~ v0.14.4
 > Helm verion ~ v3.3.4
 
-Be sure the aws config file exists:
+Be sure the aws config files exist:
 
     cat ~/.aws/credentials
 
@@ -48,13 +48,18 @@ Be sure the aws config file exists:
     aws_access_key_id = xxxxxx
     aws_secret_access_key = xxxxxx
 
+    cat ~/.aws/config
+
+    [default]
+    region = eu-west-1
+
 and also, aws account id should be placed in aws load balancer service account:
 
 Mac:
 
     sed -i'.yaml' 's/AWSACCOUNT/xxxxxx/' helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account
     mv helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account.yml
-    
+
 Linux:
 
     sed -i 's/AWSACCOUNT/xxxxxx/' helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account
