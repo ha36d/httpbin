@@ -53,7 +53,8 @@ and also, aws account id should be placed in aws load balancer service account:
 Mac:
 
     sed -i'.yaml' 's/AWSACCOUNT/xxxxxx/' helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account
-
+    mv helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account.yml
+    
 Linux:
 
     sed -i 's/AWSACCOUNT/xxxxxx/' helm/aws-load-balancer-controller/aws-load-balancer-controller-service-account
